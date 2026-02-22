@@ -1,0 +1,49 @@
+{
+  "name": "@phantasy/plugin-twitch",
+  "version": "1.0.0",
+  "description": "Twitch plugin for Phantasy - Stream notifications, chat integration, and streaming tools",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "phantasy",
+    "plugin",
+    "twitch",
+    "streaming",
+    "chat"
+  ],
+  "author": "Phantasy",
+  "license": "BUSL-1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phantasy-bot/plugin-twitch"
+  },
+  "dependencies": {
+    "@phantasy/plugin-base": "workspace:*"
+  },
+  "peerDependencies": {
+    "express": "^4.18.0",
+    "zod": "^3.22.0",
+    "@phantasy/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "phantasy": {
+    "category": "social",
+    "tier": "optional",
+    "capabilities": [
+      "chat",
+      "notifications",
+      "stream"
+    ]
+  }
+}
