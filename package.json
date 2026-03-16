@@ -1,7 +1,7 @@
 {
   "name": "@phantasy/plugin-twitch",
   "version": "2.0.0",
-  "private": true,
+  "private": false,
   "description": "Twitch streaming and chat integration plugin for Phantasy companions.",
   "license": "MIT",
   "type": "module",
@@ -32,6 +32,9 @@
     "type": "git",
     "url": "https://github.com/phantasy-bot/plugin-twitch"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/phantasy-bot/plugin-twitch",
   "scripts": {
     "build": "tsup",
@@ -39,6 +42,9 @@
   },
   "peerDependencies": {
     "@phantasy/agent": "^2.0.0"
+  },
+  "dependencies": {
+    "tmi.js": "1.8.5"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
@@ -59,6 +65,7 @@
     "permissions": [
       "internet"
     ],
+    "pluginDependencies": [],
     "platforms": [
       "node"
     ],

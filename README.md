@@ -4,11 +4,11 @@ Twitch streaming and chat integration plugin for Phantasy companions.
 
 Package: `@phantasy/plugin-twitch`
 Repo: https://github.com/phantasy-bot/plugin-twitch
-Phase: `scaffold-only`
+Phase: `source-extracted`
 
 ## Status
 
-This repo is now the intended direct source-of-truth for the plugin, but it is still only a scaffold. The real implementation needs to be built here rather than kept in the main Phantasy monorepo.
+This repo is now seeded with real plugin source extracted from the Phantasy monorepo. It is no longer just a blank scaffold, but it may still need seam cleanup before it can become the sole implementation path.
 
 ## Development
 
@@ -18,7 +18,7 @@ npm run typecheck
 npm run build
 ```
 
-## Installability
+## Extraction Goal
 
-This scaffold is not published yet. Once the implementation is complete, publish it under the package name above and add it to the public Hub registry.
+Continue removing deep monorepo-only dependencies so releases can happen directly from this repo.
 

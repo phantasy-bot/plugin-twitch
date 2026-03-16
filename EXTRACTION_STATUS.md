@@ -1,14 +1,14 @@
 # @phantasy/plugin-twitch
 
 - Repo URL: https://github.com/phantasy-bot/plugin-twitch
-- Extraction phase: `scaffold-only`
+- Extraction phase: `source-extracted`
 - Source of truth: `standalone-repo`
-- Sync mode: `scaffold-package`
+- Sync mode: `source-extract`
 
 ## Meaning
 
-This repo is scaffolded as a direct standalone plugin package. It is the intended future source-of-truth, but it does not yet have a complete implementation.
+This repo now receives a true source extraction payload from the main Phantasy monorepo. It should continue severing deep internal dependencies until the standalone repo becomes fully independent.
 
 ## Next Step
 
-Build the real plugin implementation directly in this repo and publish it independently once the functionality exists.
+Continue replacing remaining monorepo-coupled imports with stable public package contracts, then publish from this repo directly.

@@ -15,13 +15,51 @@
   "permissions": [
     "internet"
   ],
+  "dependencies": [],
   "visibility": "public",
   "repoUrl": "https://github.com/phantasy-bot/plugin-twitch",
   "sourceOfTruth": "standalone-repo",
-  "syncMode": "scaffold-package",
-  "phase": "scaffold-only",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
   "repoExists": true,
   "npmPublished": false,
+  "sourceExtract": {
+    "packageDependencies": {
+      "tmi.js": "1.8.5"
+    },
+    "files": [
+      {
+        "sourcePath": "src/plugins/twitch/index.ts",
+        "targetPath": "src/index.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/twitch-plugin.ts",
+        "targetPath": "src/twitch-plugin.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/twitch-config.ts",
+        "targetPath": "src/twitch-config.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/twitch-integration.ts",
+        "targetPath": "src/twitch-integration.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/runtime/twitch-bot-service.ts",
+        "targetPath": "src/runtime/twitch-bot-service.ts"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "\"@/plugins/base-plugin\"",
+        "to": "\"@phantasy/agent/plugins\""
+      },
+      {
+        "from": "\"@/plugin-runtime\"",
+        "to": "\"@phantasy/agent/plugin-runtime\""
+      }
+    ]
+  },
   "phantasy": {
     "displayName": "Twitch",
     "category": "streaming",
@@ -36,6 +74,7 @@
     "permissions": [
       "internet"
     ],
+    "pluginDependencies": [],
     "platforms": [
       "node"
     ],
@@ -63,5 +102,5 @@
       }
     }
   },
-  "exportedAt": "2026-03-15T15:23:37.116Z"
+  "exportedAt": "2026-03-16T02:20:40.127Z"
 }
