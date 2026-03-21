@@ -1,0 +1,106 @@
+{
+  "slug": "plugin-twitch",
+  "packageName": "@phantasy/plugin-twitch",
+  "displayName": "Twitch",
+  "description": "Twitch streaming and chat integration plugin for Phantasy companions.",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "streaming",
+  "tags": [
+    "twitch",
+    "streaming",
+    "chat",
+    "creator"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-twitch",
+  "sourceOfTruth": "standalone-repo",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "repoExists": true,
+  "npmPublished": false,
+  "sourceExtract": {
+    "packageDependencies": {
+      "tmi.js": "1.8.5"
+    },
+    "files": [
+      {
+        "sourcePath": "src/plugins/twitch/index.ts",
+        "targetPath": "src/index.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/twitch-plugin.ts",
+        "targetPath": "src/twitch-plugin.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/twitch-config.ts",
+        "targetPath": "src/twitch-config.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/twitch-integration.ts",
+        "targetPath": "src/twitch-integration.ts"
+      },
+      {
+        "sourcePath": "src/plugins/twitch/runtime/twitch-bot-service.ts",
+        "targetPath": "src/runtime/twitch-bot-service.ts"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "\"@/plugins/base-plugin\"",
+        "to": "\"@phantasy/agent/plugins\""
+      },
+      {
+        "from": "\"@/plugin-runtime\"",
+        "to": "\"@phantasy/agent/plugin-runtime\""
+      }
+    ]
+  },
+  "phantasy": {
+    "displayName": "Twitch",
+    "category": "streaming",
+    "tags": [
+      "twitch",
+      "streaming",
+      "chat",
+      "creator"
+    ],
+    "workspace": "business",
+    "extensionKind": "integration",
+    "permissions": [
+      "internet"
+    ],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "twitch",
+      "label": "Twitch",
+      "section": "business",
+      "workspace": "business",
+      "kind": "generic",
+      "keywords": [
+        "twitch",
+        "streaming",
+        "chat",
+        "creator"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "exportedAt": "2026-03-21T21:31:38.301Z"
+}
