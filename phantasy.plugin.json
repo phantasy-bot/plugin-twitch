@@ -1,0 +1,21 @@
+{
+  "name": "@phantasy/plugin-twitch",
+  "version": "2.0.1",
+  "description": "Twitch streaming and chat integration plugin for Phantasy companions.",
+  "displayName": "Twitch",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "adminSurface": {
+    "tabId": "twitch",
+    "label": "Twitch",
+    "section": "business",
+    "workspace": "business",
+    "kind": "generic",
+    "keywords": [
+      "twitch",
+      "streaming",
+      "chat",
+      "creator"
+    ]
+  }
+}
