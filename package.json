@@ -1,49 +1,101 @@
 {
   "name": "@phantasy/plugin-twitch",
-  "version": "1.0.0",
-  "description": "Twitch plugin for Phantasy - Stream notifications, chat integration, and streaming tools",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "0.1.0-beta",
+  "private": false,
+  "description": "Twitch streaming and chat integration plugin for Phantasy companions.",
+  "license": "FSL-1.1-Apache-2.0",
   "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "test": "vitest run",
-    "prepublishOnly": "npm run build"
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "phantasy.plugin.json"
+  ],
+  "sideEffects": false,
   "keywords": [
-    "phantasy",
-    "plugin",
     "twitch",
     "streaming",
-    "chat"
+    "chat",
+    "creator"
   ],
-  "author": "Phantasy",
-  "license": "BUSL-1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/phantasy-bot/plugin-twitch"
   },
-  "dependencies": {
-    "@phantasy/plugin-base": "workspace:*"
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/phantasy-bot/plugin-twitch",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "express": "^4.18.0",
-    "zod": "^3.22.0",
-    "@phantasy/core": "^1.0.0"
+    "@phantasy/agent": "^0.1.0-beta"
+  },
+  "peerDependenciesMeta": {
+    "@phantasy/agent": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "tmi.js": "^1.8.5"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.10.0",
-    "typescript": "^5.3.0",
-    "vitest": "^1.0.0"
+    "@types/node": "^24.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.2",
+    "@types/tmi.js": "^1.8.6"
   },
   "phantasy": {
-    "category": "social",
-    "tier": "optional",
-    "capabilities": [
+    "displayName": "Twitch",
+    "category": "streaming",
+    "tags": [
+      "twitch",
+      "streaming",
       "chat",
-      "notifications",
-      "stream"
-    ]
+      "creator"
+    ],
+    "workspace": "business",
+    "extensionKind": "integration",
+    "permissions": [
+      "internet"
+    ],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "twitch",
+      "label": "Twitch",
+      "workspace": "business",
+      "kind": "generic",
+      "keywords": [
+        "twitch",
+        "streaming",
+        "chat",
+        "creator"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
   }
 }

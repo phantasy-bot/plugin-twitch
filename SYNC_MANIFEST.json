@@ -1,0 +1,126 @@
+{
+  "slug": "plugin-twitch",
+  "packageName": "@phantasy/plugin-twitch",
+  "displayName": "Twitch",
+  "description": "Twitch streaming and chat integration plugin for Phantasy companions.",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "streaming",
+  "tags": [
+    "twitch",
+    "streaming",
+    "chat",
+    "creator"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-twitch",
+  "sourceOfTruth": "monorepo",
+  "sourceOwner": "monorepo",
+  "sourcePayload": "source-extract",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "sourceExtract": {
+    "packageDependencies": {
+      "tmi.js": "^1.8.5"
+    },
+    "devDependencies": {
+      "@types/tmi.js": "^1.8.6"
+    },
+    "files": [
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/index.ts",
+        "targetPath": "src/index.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/twitch-plugin.ts",
+        "targetPath": "src/twitch-plugin.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/twitch-plugin-endpoints.ts",
+        "targetPath": "src/twitch-plugin-endpoints.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/twitch-integration.ts",
+        "targetPath": "src/twitch-integration.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/twitch-config.ts",
+        "targetPath": "src/twitch-config.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/runtime/twitch-bot-service.ts",
+        "targetPath": "src/runtime/twitch-bot-service.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/runtime/twitch-chat-response.ts",
+        "targetPath": "src/runtime/twitch-chat-response.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/runtime/twitch-helix-api.ts",
+        "targetPath": "src/runtime/twitch-helix-api.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/runtime/twitch-integration-config.ts",
+        "targetPath": "src/runtime/twitch-integration-config.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/runtime/twitch-plugin-config.ts",
+        "targetPath": "src/runtime/twitch-plugin-config.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-twitch/runtime/config-helpers.ts",
+        "targetPath": "src/runtime/config-helpers.ts"
+      }
+    ]
+  },
+  "repoExists": true,
+  "npmPublished": false,
+  "runtimeLoadMode": "git",
+  "monorepoPackageStatus": "removed",
+  "phantasy": {
+    "displayName": "Twitch",
+    "category": "streaming",
+    "tags": [
+      "twitch",
+      "streaming",
+      "chat",
+      "creator"
+    ],
+    "workspace": "business",
+    "extensionKind": "integration",
+    "permissions": [
+      "internet"
+    ],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "twitch",
+      "label": "Twitch",
+      "workspace": "business",
+      "kind": "generic",
+      "keywords": [
+        "twitch",
+        "streaming",
+        "chat",
+        "creator"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "exportedAt": "2026-07-03T03:20:02.644Z"
+}
